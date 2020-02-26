@@ -1,9 +1,12 @@
-System.register(["vue"], function(__WEBPACK_DYNAMIC_EXPORT__) {
-	var __WEBPACK_EXTERNAL_MODULE_vue__;
+System.register(["react","react-dom"], function(__WEBPACK_DYNAMIC_EXPORT__) {
+	var __WEBPACK_EXTERNAL_MODULE_react__, __WEBPACK_EXTERNAL_MODULE_react_dom__;
 	return {
 		setters: [
 			function(module) {
-				__WEBPACK_EXTERNAL_MODULE_vue__ = module;
+				__WEBPACK_EXTERNAL_MODULE_react__ = module;
+			},
+			function(module) {
+				__WEBPACK_EXTERNAL_MODULE_react_dom__ = module;
 			}
 		],
 		execute: function() {
@@ -105,31 +108,45 @@ System.register(["vue"], function(__WEBPACK_DYNAMIC_EXPORT__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "vue");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "react-dom");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 
 
-console.log('Vue', vue__WEBPACK_IMPORTED_MODULE_0___default.a);
 
-const App = vue__WEBPACK_IMPORTED_MODULE_0___default.a.default.extend({
-  template: '<p>Jupiter has {{numMoons}} moons',
-  data: () => ({
-    numMoons: 79,
-  })
-});
+class Hello extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  render() {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('div', null, `Hello ${this.props.toWhat}`);
+  }
+}
 
-new App().$mount('#vue-container');
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(
+  react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Hello, {toWhat: 'World'}, null),
+  document.getElementById('root')
+);
 
 /***/ }),
 
-/***/ "vue":
-/*!**********************!*\
-  !*** external "vue" ***!
-  \**********************/
+/***/ "react":
+/*!************************!*\
+  !*** external "react" ***!
+  \************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE_vue__;
+module.exports = __WEBPACK_EXTERNAL_MODULE_react__;
+
+/***/ }),
+
+/***/ "react-dom":
+/*!****************************!*\
+  !*** external "react-dom" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_react_dom__;
 
 /***/ })
 
@@ -138,4 +155,3 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_vue__;
 		}
 	};
 });
-//# sourceMappingURL=bundle.js.map
